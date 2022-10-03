@@ -1,0 +1,25 @@
+$yellow: #fce473;
+$blue: #007aff;
+$lightblue: #11dcff;
+$black: #000000;
+
+.special {
+  .blue {
+    display: inline;
+    padding: .2em .5em .2em .5em;
+    border-radius: .2em;
+    color: white;
+    background-color: $blue;
+  }
+  .lightblue {
+    display: inline;
+    padding: .2em .5em .2em .5em;
+    border-radius: .2em;
+    color: white;
+    background-color: $lightblue;
+  }
+}
+
+.quote {
+  border-left: 5px solid $yellow;
+}
