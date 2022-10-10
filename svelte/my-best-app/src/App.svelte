@@ -1,9 +1,9 @@
 <script>
-  import svelteLogo from './assets/svelte.svg'
   import Counter from './lib/Counter.svelte'
   import Toggle from "./lib/Toggle.svelte";
   import Each from "./lib/Each.svelte";
   import Await from "./lib/Await.svelte";
+  import MouseEvents from "./lib/MouseEvents.svelte";
 </script>
 
 <main>
@@ -14,6 +14,7 @@
     <Toggle />
     <Each />
     <Await/>
+    <MouseEvents />
   </div>
 
   <p>
