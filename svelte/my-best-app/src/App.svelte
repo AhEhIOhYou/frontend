@@ -4,6 +4,12 @@
   import Each from "./lib/Each.svelte";
   import Await from "./lib/Await.svelte";
   import MouseEvents from "./lib/MouseEvents.svelte";
+  import Inner from "./lib/inner.svelte";
+
+	function handleMessage(event) {
+		console.log(event.detail.text);
+	}
+
 </script>
 
 <main>
@@ -15,6 +21,7 @@
     <Each />
     <Await/>
     <MouseEvents />
+    <Inner on:foo={handleMessage} />
   </div>
 
   <p>
