@@ -3,6 +3,7 @@
   import Counter from './lib/Counter.svelte'
   import Toggle from "./lib/Toggle.svelte";
   import Each from "./lib/Each.svelte";
+  import Await from "./lib/Await.svelte";
 </script>
 
 <main>
@@ -12,6 +13,7 @@
     <Counter />
     <Toggle />
     <Each />
+    <Await/>
   </div>
 
   <p>
