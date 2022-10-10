@@ -1,11 +1,11 @@
 <script>
     async function getData() {
         const res = await fetch('https://modelshowtime.serdcebolit.ru/api/model/12', {method: 'get'});
+        const data = await res.json();
         if (res.ok) {
-            const data = await res.json();
             return data;
         } else {
-            throw new Error('some error occurred');
+            throw new Error(data);
         }
     }
 
