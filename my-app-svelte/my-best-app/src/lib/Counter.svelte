@@ -1,16 +1,18 @@
 <script>
-  let counter = 0;
-  const increment = () => {
-    counter++;
-  }
+  let sum;
+  let arr = [1,2,3,4,5];
 
-  $: if (counter > 5) {
-    alert("STOP IT");
-    counter = 0;
-  }
+  const addNumber = () => {
+    arr = [...arr, arr[arr.length - 1] * 2];
+  };
+
+  $: sum = arr.reduce((prev, cur) => prev + cur, 0);
 
 </script>
 
-<button on:click={increment}>
-  COUNTER: {counter}
+<p>
+  {arr.join(' + ')} = {sum}
+</p>
+<button on:click={addNumber}>
+  Add number
 </button>
