@@ -5,6 +5,7 @@
   import Await from "./lib/Await.svelte";
   import MouseEvents from "./lib/MouseEvents.svelte";
   import Inner from "./lib/inner.svelte";
+	import Bind from "./lib/Bind.svelte";
 
 	function handleMessage(event) {
 		console.log(event.detail.text);
@@ -22,6 +23,8 @@
     <Await/>
     <MouseEvents />
     <Inner on:foo={handleMessage} />
+		<br>
+		<Bind />
   </div>
 
   <p>
