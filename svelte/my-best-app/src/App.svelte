@@ -8,6 +8,14 @@
 	import Bind from "./lib/Bind.svelte";
 	import VideoControl from "./lib/VideoControl.svelte";
 	import RGBLogo from "./lib/RGBLogo.svelte";
+	import Keypad from "./lib/Keypad.svelte";
+
+	let pin;
+	$: view = pin ? pin.replace(/\d(?!$)/g, '*') : 'enter pin';
+
+	function handleSubmit() {
+		alert(pin);
+	}
 
 	function handleMessage(event) {
 		console.log(event.detail.text);
@@ -19,17 +27,19 @@
 	<h1>Vite + Svelte</h1>
 
 	<div class="card">
-		<Counter/>
-		<Toggle/>
-		<br>
-		<RGBLogo />
-		<Each/>
-		<Await/>
-		<MouseEvents/>
-		<Inner on:foo={handleMessage}/>
-		<br>
-		<Bind/>
-		<VideoControl />
+		<h1>{view}</h1>
+		<Keypad bind:value={pin} on:submit={handleSubmit} />
+<!--		<Counter/>-->
+<!--		<Toggle/>-->
+<!--		<br>-->
+<!--		<RGBLogo />-->
+<!--		<Each/>-->
+<!--		<Await/>-->
+<!--		<MouseEvents/>-->
+<!--		<Inner on:foo={handleMessage}/>-->
+<!--		<br>-->
+<!--		<Bind/>-->
+<!--		<VideoControl />-->
 	</div>
 
 	<p>
