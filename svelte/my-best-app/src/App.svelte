@@ -7,6 +7,7 @@
 	import Inner from "./lib/inner.svelte";
 	import Bind from "./lib/Bind.svelte";
 	import VideoControl from "./lib/VideoControl.svelte";
+	import RGBLogo from "./lib/RGBLogo.svelte";
 
 	function handleMessage(event) {
 		console.log(event.detail.text);
@@ -20,6 +21,8 @@
 	<div class="card">
 		<Counter/>
 		<Toggle/>
+		<br>
+		<RGBLogo />
 		<Each/>
 		<Await/>
 		<MouseEvents/>
