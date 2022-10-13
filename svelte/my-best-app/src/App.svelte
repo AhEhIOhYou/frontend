@@ -9,6 +9,7 @@
 	import VideoControl from "./lib/VideoControl.svelte";
 	import RGBLogo from "./lib/RGBLogo.svelte";
 	import Keypad from "./lib/Keypad.svelte";
+	import ElysiaChat from "./lib/ElysiaChat.svelte";
 
 	let pin;
 	$: view = pin ? pin.replace(/\d(?!$)/g, '*') : 'enter pin';
@@ -27,8 +28,9 @@
 	<h1>Vite + Svelte</h1>
 
 	<div class="card">
-		<h1>{view}</h1>
-		<Keypad bind:value={pin} on:submit={handleSubmit} />
+		<ElysiaChat />
+<!--		<h1>{view}</h1>-->
+<!--		<Keypad bind:value={pin} on:submit={handleSubmit} />-->
 <!--		<Counter/>-->
 <!--		<Toggle/>-->
 <!--		<br>-->
