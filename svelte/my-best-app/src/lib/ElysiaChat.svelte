@@ -57,6 +57,7 @@
 		display: flex;
 		flex-direction: column;
 		height: 100%;
+		max-height: 400px;
 		max-width: 320px;
 	}
 

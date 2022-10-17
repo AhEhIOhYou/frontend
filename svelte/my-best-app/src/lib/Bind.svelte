@@ -15,18 +15,18 @@
 	}
 
 	let todos = [
-		{ done: false, text: 'kekw1'},
-		{ done: false, text: 'kekw2'},
+		{done: false, text: 'kekw1'},
+		{done: false, text: 'kekw2'},
 	];
 
 	let remaining = todos.length;
 
-		function clear() {
+	function clear() {
 		todos = todos.filter(item => !item.done)
 	}
 
 	function add() {
-		todos = todos.concat({ done: false, text: '' });
+		todos = todos.concat({done: false, text: ''});
 	}
 
 	$: remaining = todos.filter(t => !t.done).length;

@@ -28,7 +28,7 @@
 	<h1>Vite + Svelte</h1>
 
 	<div class="card">
-		<ElysiaChat />
+<!--		<ElysiaChat />-->
 <!--		<h1>{view}</h1>-->
 <!--		<Keypad bind:value={pin} on:submit={handleSubmit} />-->
 <!--		<Counter/>-->
@@ -40,7 +40,7 @@
 <!--		<MouseEvents/>-->
 <!--		<Inner on:foo={handleMessage}/>-->
 <!--		<br>-->
-<!--		<Bind/>-->
+		<Bind/>
 <!--		<VideoControl />-->
 	</div>
 
