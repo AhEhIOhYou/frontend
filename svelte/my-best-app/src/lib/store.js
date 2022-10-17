@@ -1,4 +1,4 @@
-import {writable} from "svelte/store";
+import {derived, writable} from "svelte/store";
 
 function createCount() {
 	const {subscribe, set, update} = writable(0);
@@ -13,3 +13,5 @@ function createCount() {
 }
 
 export const count = createCount();
+export const word = writable('world');
+export const greeting = derived(word, 	$name => `Привет, ${$name}!`);

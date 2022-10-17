@@ -10,7 +10,7 @@
 	import RGBLogo from "./lib/RGBLogo.svelte";
 	import Keypad from "./lib/Keypad.svelte";
 	import ElysiaChat from "./lib/ElysiaChat.svelte";
-	import { count } from './lib/store.js';
+	import {count, greeting, word} from './lib/store.js';
 
 	let pin;
 	$: view = pin ? pin.replace(/\d(?!$)/g, '*') : 'enter pin';
@@ -51,6 +51,8 @@
 			<p>Edit value</p>
 			<input bind:value={$count} on:change={() => count.set($count)} type="number">
 		</label>
+		<h2>{$greeting}</h2>
+		<input bind:value={$word}>
 	</div>
 
 	<p>
