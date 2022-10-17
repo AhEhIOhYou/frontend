@@ -12,6 +12,7 @@
 	import ElysiaChat from "./lib/ElysiaChat.svelte";
 	import {count, greeting, word} from './lib/store.js';
 	import Ball from "./lib/Ball.svelte";
+	import Fly from "./lib/Fly.svelte";
 
 	let pin;
 	$: view = pin ? pin.replace(/\d(?!$)/g, '*') : 'enter pin';
@@ -54,6 +55,7 @@
 <!--		</label>-->
 <!--		<h2>{$greeting}</h2>-->
 <!--		<input bind:value={$word}>-->
+		<Fly />
 	</div>
 
 	<p>
