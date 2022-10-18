@@ -13,6 +13,10 @@
 	import { count, greeting, word } from "./lib/store.js";
 	import Ball from "./lib/Ball.svelte";
 	import Fly from "./lib/Fly.svelte";
+	import { closeClick } from './lib/modal.js';
+	import { fade } from 'svelte/transition';
+
+	let showModal = false;
 
 	let pin;
 	$: view = pin ? pin.replace(/\d(?!$)/g, "*") : "enter pin";
@@ -25,37 +29,52 @@
 		console.log(event.detail.text);
 	}
 
+	$: {
+		if (!showModal) {
+			pin = "";
+		}
+	}
 </script>
 
 <main>
 	<h1>Vite + Svelte</h1>
 
 	<div class="card">
-		<!--		<ElysiaChat />-->
-		<!--		<h1>{view}</h1>-->
-		<!--		<Keypad bind:value={pin} on:submit={handleSubmit} />-->
-		<!--		<Counter/>-->
-		<!--		<Toggle/>-->
-		<!--		<br>-->
-		<!--		<RGBLogo />-->
-		<!--		<Each/>-->
-		<!--		<Await/>-->
-		<!--		<MouseEvents/>-->
-		<!--		<Inner on:foo={handleMessage}/>-->
-		<!--		<br>-->
-		<!--		<Bind/>-->
-		<!--		<VideoControl />-->
-		<!--		<h1>Count is {$count}</h1>-->
-		<!--		<button on:click={() => count.increment(2)}>+</button>-->
-		<!--		<button on:click={() => count.decrement(3)}>-</button>-->
-		<!--		<button on:click={count.reset}>reset</button>-->
-		<!--		<label>-->
-		<!--			<p>Edit value</p>-->
-		<!--			<input bind:value={$count} on:change={() => count.set($count)} type="number">-->
-		<!--		</label>-->
-		<!--		<h2>{$greeting}</h2>-->
-		<!--		<input bind:value={$word}>-->
-		<Fly />
+		<!-- <ElysiaChat />
+		<Counter />
+		<Toggle />
+		<br />
+		<RGBLogo />
+		<Each />
+		<Await />
+		<MouseEvents />
+		<Inner on:foo={handleMessage} />
+		<br />
+		<Bind />
+		<VideoControl />
+		<h1>Count is {$count}</h1>
+		<button on:click={() => count.increment(2)}>+</button>
+		<button on:click={() => count.decrement(3)}>-</button>
+		<button on:click={count.reset}>reset</button>
+		<label>
+			<p>Edit value</p>
+			<input
+				bind:value={$count}
+				on:change={() => count.set($count)}
+				type="number"
+			/>
+		</label>
+		<h2>{$greeting}</h2>
+		<input bind:value={$word} />
+		<Fly /> -->
+		<button on:click={() => showModal = true}>Вызвать модальное</button>
+		{#if showModal}
+			<div transition:fade={{duration: 200}} use:closeClick on:clickoutside={() => {showModal = !showModal}} class="modal">
+				<h1>{view}</h1>
+				<Keypad bind:value={pin} on:submit={handleSubmit} />
+				<a href="#" class="close" on:click={() => showModal = false}>
+			</div>
+		{/if}
 	</div>
 
 	<p>
