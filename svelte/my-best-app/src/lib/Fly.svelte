@@ -53,10 +53,6 @@
 		justify-content: start;
 		flex-direction: column;
 	}
-	li {
-		list-style-type: none;
-		border-bottom: 1px grey solid;
-	}
 </style>
 <!--AhEhIOhYou-->
 <!--

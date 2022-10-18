@@ -38,7 +38,6 @@
 				comments = comments.concat({
 					author: 'eliza',
 					text: '...',
-					placeholder: true
 				});
 
 				setTimeout(() => {
