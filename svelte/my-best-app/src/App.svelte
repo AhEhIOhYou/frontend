@@ -1,7 +1,7 @@
 <script lang="ts">
   // import Home from '@/pages/Home.svelte'
-  import Header from "@/pages/Header.svelte";
-  import Note from "@/pages/Note.svelte";
+  import Header from "@/components/Header.svelte";
+  import Note from "@/components/Note.svelte";
 </script>
 
 <Header />

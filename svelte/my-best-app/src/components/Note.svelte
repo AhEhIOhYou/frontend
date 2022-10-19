@@ -2,7 +2,7 @@
 	import Fa from "svelte-fa/src/fa.svelte";
 	import { faStar } from "@fortawesome/free-solid-svg-icons";
 	import { createEventDispatcher } from "svelte";
-	import { formDate } from "@/lib/utils";
+	import { formatDate } from "@/lib/utils";
 
 	export let id: number;
 	export let title: string;
@@ -33,7 +33,7 @@
 	</div>
 
 	<div class="card-footer">
-		<div class="date">{formDate(date)}</div>
+		<div class="date">{formatDate(date)}</div>
 		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<div
 			class="fav-icon"

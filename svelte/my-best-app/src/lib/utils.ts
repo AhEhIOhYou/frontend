@@ -1,7 +1,7 @@
 import moment from 'moment'
 
 
-export const formDate = (dateString: string): string => {
+export const formatDate = (dateString: string): string => {
 	const date = moment(dateString, 'YYYYMMDDHHmmss');
 
 	if (moment().isSame(date, 'day')) {
