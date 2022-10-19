@@ -1,16 +1,25 @@
 <script lang="ts">
   // import Home from '@/pages/Home.svelte'
-  import Header from '@/pages/Header.svelte'
+  import Header from "@/pages/Header.svelte";
+  import Note from "@/pages/Note.svelte";
 </script>
 
 <Header />
 
-<!-- <Home /> -->
+<Note
+  id={1234}
+  title={"Some Note"}
+  content={"This note is about this and that"}
+  tags={["test", "text"]}
+  date={"20210806120000"}
+  isFavorite={false}
+/>
 
+<!-- <Home /> -->
 <style lang="scss">
   :root {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     height: 100%;
   }
 
