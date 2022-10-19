@@ -22,7 +22,8 @@
 	};
 </script>
 
-<div class="note-card">
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<div class="note-card" on:click>
 	<div class="title">{title}</div>
 	<div class="preview">{trimContent(content)}</div>
 
