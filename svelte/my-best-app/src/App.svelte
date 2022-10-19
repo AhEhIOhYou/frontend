@@ -2,20 +2,12 @@
   // import Home from '@/pages/Home.svelte'
   import Header from "@/components/Header.svelte";
   import Note from "@/components/Note.svelte";
+  import Home from "@/pages/Home.svelte";
 </script>
 
 <Header />
+<Home />
 
-<Note
-  id={1234}
-  title={"Some Note"}
-  content={"This note is about this and that"}
-  tags={["test", "text"]}
-  date={"20210806120000"}
-  isFavorite={false}
-/>
-
-<!-- <Home /> -->
 <style lang="scss">
   :root {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,

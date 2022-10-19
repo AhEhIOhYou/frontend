@@ -9,14 +9,14 @@
 <div class="modal-overlay">
 	<div class="modal">
 		<div class="modal-header">
-			<slot name="title"></slot>
+			<slot name="title" />
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
-			<div class="close-icon" on:click="{() => dispatch('closeModal')}">
+			<div class="close-icon" on:click={() => dispatch("closeModal")}>
 				<Fa icon={faTimes} color="#afaeae" size="1x" />
 			</div>
 		</div>
-		<slot name="body"></slot>>
-		<slot name="footer"></slot>
+		<slot name="body" />
+		<slot name="footer" />
 	</div>
 </div>
 
