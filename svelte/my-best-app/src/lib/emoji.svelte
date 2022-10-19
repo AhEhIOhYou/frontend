@@ -51,20 +51,20 @@
 
 	const updateEmojiArr = (index) => {
 		if (emojiList[index].show) {
-			confetti = confetti.map((char, i) => {
+			confetti = confetti.map((emoji, i) => {
 				if ((i + index) % 4 == 0) {
-					char.emoji = emojiList[index].e;
+					emoji.emoji = emojiList[index].e;
 					emojiList[index].show = true;
 				}
-				return char;
+				return emoji;
 			});
 		} else {
-			confetti = confetti.map((char, i) => {
+			confetti = confetti.map((emoji, i) => {
 				if ((i + index) % 4 == 0) {
-					char.emoji = defaultEmoji;
+					emoji.emoji = defaultEmoji;
 					emojiList[index].show = false;
 				}
-				return char;
+				return emoji;
 			});
 		}
 	};
