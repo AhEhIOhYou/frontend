@@ -3,8 +3,9 @@
 <div>
 	<form action="hello" method="post">
 		<label>
-			<input type="text" name="important-data">
+			<input type="text" name="important-data" />
 		</label>
 		<button type="submit">Press it</button>
 	</form>
+	<a href="cat-facts">To Cat Facts</a>
 </div>
