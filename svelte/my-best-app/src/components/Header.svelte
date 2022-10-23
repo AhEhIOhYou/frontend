@@ -2,6 +2,10 @@
 	import logo from '@/assets/svelte.svg'
 </script>
 
+<svelte:head>
+	<title>Wellcum!</title>
+</svelte:head>
+
 <header class="global-header">
 	<div class="app-name">
 		<img src={logo} alt="Svelte Logo" class="logo"/>

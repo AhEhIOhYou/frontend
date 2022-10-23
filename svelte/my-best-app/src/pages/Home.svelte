@@ -109,6 +109,9 @@
 			notes.push(note);
 		}
 
+		console.log(notes);
+		
+
 		saveNotesToStorage();
 	};
 
