@@ -25,22 +25,67 @@
 	};
 </script>
 
-<main>
-	<h1>Cat Facts</h1>
+<div class="cat-facts">
 	<div class="cat-fact-container">
-		{#await promise}
-			<p>...loading...</p>
-		{:then fact}
-			<p>{fact}</p>
-		{:catch error}
-			<p style="color: red">{error.message}</p>
-		{/await}
+		<div class="title">
+			<h1 class="title__text">Cat Facts</h1>
+		</div>
+		<div>
+			{#await promise}
+				<p>...loading...</p>
+			{:then fact}
+				<p>{fact}</p>
+			{:catch error}
+				<p style="color: red">{error.message}</p>
+			{/await}
+		</div>
+		<button on:click={() => reload()}>One more fact</button>
 	</div>
-	<button on:click={() => reload()}>One more fact</button>
-</main>
+	<div class="cat-fact-container">
+		<div class="title">
+			<h1 class="title__text">Cat Facts</h1>
+		</div>
+		<div>
+			{#await promise}
+				<p>...loading...</p>
+			{:then fact}
+				<p>{fact}</p>
+			{:catch error}
+				<p style="color: red">{error.message}</p>
+			{/await}
+		</div>
+		<button on:click={() => reload()}>One more fact</button>
+	</div>
+	<div class="cat-fact-container">
+		<div class="title">
+			<h1 class="title__text">Cat Facts</h1>
+		</div>
+		<div>
+			{#await promise}
+				<p>...loading...</p>
+			{:then fact}
+				<p>{fact}</p>
+			{:catch error}
+				<p style="color: red">{error.message}</p>
+			{/await}
+		</div>
+		<button on:click={() => reload()}>One more fact</button>
+	</div>
+</div>
 
 <style lang="scss">
+	.cat-facts {
+		display: flex;
+		flex-wrap: wrap;
+	}
 	.cat-fact-container {
-		font-size: 30px;
+		font-size: 20px;
+		width: 400px;
+		border: 1px solid #aaa;
+		border-radius: 2px;
+		box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+		padding: 1em;
+		margin: 8px;
+		position: relative;
 	}
 </style>
