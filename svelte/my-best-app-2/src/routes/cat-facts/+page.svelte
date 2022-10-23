@@ -1,23 +1,23 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	let promise;
+	let promise: Promise<string>;
 	onMount(async () => {
 		promise = getRandomCatFacts();
 	});
 
-	const getRandomCatFacts = async () => {
-		const res = await fetch("https://catfact.ninja/fact");
-		const resJson = await res.json();
-
-		console.log(resJson);
-		
-
-		if (resJson.fact) {
-			return resJson.fact;
-		} else {
-			throw new Error("Data not found");
-		}
+	const getRandomCatFacts = async (): Promise<string> => {
+		const res = await fetch('https://catfact.ninja/fact')
+			.then((response) => response.json())
+			.then((data) => {
+				if (data.fact) {
+					return data.fact;
+				} else {
+					throw new Error('Data not found');
+				}
+			})
+			.catch((error) => console.error(`Some problems: ${error}`));
+		return res;
 	};
 
 	const reload = () => {
