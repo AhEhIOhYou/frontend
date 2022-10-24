@@ -7,5 +7,12 @@
 		</label>
 		<button type="submit">Press it</button>
 	</form>
-	<a href="cat-facts">To Cat Facts</a>
+	<ul>
+		<li>
+			go to <a href="/products/123">product detail page</a>
+		</li>
+		<li>
+			go to <a href="/products/222">product detail page</a>
+		</li>
+	</ul>
 </div>
