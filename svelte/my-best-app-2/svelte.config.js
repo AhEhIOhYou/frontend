@@ -8,7 +8,7 @@ const config = {
 	kit: {
 		adapter: adapter({ out: 'build' }),
 		alias: {
-			$components: 'src/components',
+			$components: 'src/components'
 		}
 	},
 	preprocess: preprocess({
