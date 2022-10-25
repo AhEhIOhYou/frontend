@@ -16,9 +16,7 @@
 
 {#if form?.success}
 	<div>
-		<h2>
-			Wellcome back!
-		</h2>
+		<h2>Wellcome back!</h2>
 	</div>
 {/if}
 
