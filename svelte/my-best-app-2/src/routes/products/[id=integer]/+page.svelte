@@ -7,5 +7,5 @@
 <div class="title">
 	<h1 class="title__text">Product {data.id}</h1>
 </div>
-
+{JSON.stringify(data.user)}
 {JSON.stringify(data.product)}

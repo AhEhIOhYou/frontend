@@ -1,18 +1,26 @@
 import type { PageServerLoad } from './$types';
 import type { Product } from '@/models/product.model';
+import { redirect } from '@sveltejs/kit';
 
-// type OutputTpe = {
-// 	product: Product;
-// };
+type OutputType = {
+	product: Product;
+};
 
-export const load: PageServerLoad = async ({ params, locals }) => {
+export const load: PageServerLoad<OutputType> = async ({ params, locals, cookies }) => {
 	const product: Product = {
 		name: `${params.id} product`,
 		color: 'blue'
 	};
 
+	let username: string = cookies.get('userName') ?? '';
+
+	if (!username) {
+		username =  locals.user ? locals.user.name : `no user here :9`;
+		cookies.set('userName', username);
+	}
+
 	return {
 		product,
-		username: locals.user ? locals.user.name : `no user ${params.id}`
+		username: username,
 	};
 };
