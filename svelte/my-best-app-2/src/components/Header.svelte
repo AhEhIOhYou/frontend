@@ -9,6 +9,7 @@
 		<a class="navbar__item" href="/about">About</a>
 		<a class="navbar__item" href="/cat-facts">Cat Facts</a>
 		<a class="navbar__item" href="/test">Test</a>
+		<a class="navbar__item" href="/login">Login</a>
 	</nav>
 </header>
 

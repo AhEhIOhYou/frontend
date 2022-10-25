@@ -1,15 +1,13 @@
 import type { Handle } from '@sveltejs/kit';
 
 export const handle: Handle = async ({ event, resolve }) => {
-	console.log(event.url.pathname);
-
-	if (event.url.pathname.startsWith('/custom')) {
-		return new Response('custom response');
+	// const accessToken: string = event.cookies.get('AuthorizationToken') ?? '';
+	console.log(event.locals.session);
+	
+	const accessToken: string | undefined = event.locals.session?.accessToken;
+	if (accessToken) {
+		event.request.headers.set('authorization', accessToken);
 	}
-
-	event.locals.user = {
-		name: 'AhEhIOhYou'
-	};
 
 	const response = await resolve(event);
 	return response;

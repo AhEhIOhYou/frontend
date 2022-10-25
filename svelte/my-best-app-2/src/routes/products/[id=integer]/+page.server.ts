@@ -12,15 +12,10 @@ export const load: PageServerLoad<OutputType> = async ({ params, locals, cookies
 		color: 'blue'
 	};
 
-	let username: string = cookies.get('userName') ?? '';
-
-	if (!username) {
-		username =  locals.user ? locals.user.name : `no user here :9`;
-		cookies.set('userName', username);
-	}
+	let username: string = cookies.get('userName') ?? 'default';
 
 	return {
 		product,
-		username: username,
+		username: username
 	};
 };
